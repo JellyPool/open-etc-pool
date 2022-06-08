@@ -312,3 +312,9 @@ network in your config.json (this sets backend (validation,unlocker) to mordor p
 APP.Network in your www/config/environment.js (this sets the frontend to mordor paramaters)
 rerun ./build.sh
 
+### Start with
+
+```bash
+  export TelegramBotToken="TOKEN"
+  go run "/workspaces/open-etc-pool/main.go"
+```
