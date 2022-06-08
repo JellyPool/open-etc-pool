@@ -22,7 +22,7 @@ module.exports = function(environment) {
         HttpPort: 8888,
   
         // Stratum mining endpoint
-        StratumHost: 'example.net',
+        StratumHost: 'etc.jellypool.xyz',
         StratumPort: 8008,
   
         // The ETC network used (classic, mordor)

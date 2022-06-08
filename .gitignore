@@ -4,3 +4,7 @@ testnet.json
 
 /build/_workspace/
 /build/bin/
+
+.vscode/
+
+www/package-lock.json
