@@ -17,6 +17,8 @@ import (
 	"github.com/etclabscore/open-etc-pool/payouts"
 	"github.com/etclabscore/open-etc-pool/proxy"
 	"github.com/etclabscore/open-etc-pool/storage"
+
+	"github.com/etclabscore/open-etc-pool/telegram"
 )
 
 var cfg proxy.Config
@@ -25,6 +27,10 @@ var backend *storage.RedisClient
 func startProxy() {
 	s := proxy.NewProxy(&cfg, backend)
 	s.Start()
+}
+
+func sendTelegramMessage(message string) {
+	telegram.SendMessage(message)
 }
 
 func startApi() {
@@ -81,6 +87,8 @@ func main() {
 	}
 
 	startNewrelic()
+
+	go sendTelegramMessage("[ETC] | 😉 | Pool rebooted")
 
 	backend = storage.NewRedisClient(&cfg.Redis, cfg.Coin)
 	pong, err := backend.Check()
