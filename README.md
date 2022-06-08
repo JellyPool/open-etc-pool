@@ -318,3 +318,7 @@ rerun ./build.sh
   export TelegramBotToken="TOKEN"
   go run "/workspaces/open-etc-pool/main.go"
 ```
+
+
+# TODO
+- Integrate variable difficuly https://organofcorti.blogspot.com/2012/10/71-variable-pool-difficulty.html
