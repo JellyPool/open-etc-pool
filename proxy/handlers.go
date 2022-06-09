@@ -7,8 +7,6 @@ import (
 
 	"github.com/etclabscore/open-etc-pool/rpc"
 	"github.com/etclabscore/open-etc-pool/util"
-
-	"github.com/etclabscore/open-etc-pool/telegram"
 )
 
 // Allow only lowercase hexadecimal with 0x prefix
@@ -88,7 +86,7 @@ func (s *ProxyServer) handleSubmitRPC(cs *Session, login, id string, params []st
 		return false, nil
 	}
 	log.Printf("Valid share from %s@%s", login, cs.ip)
-	go telegram.SendMessage("[ETC] | 🤤 | New valid share!")
+	// go telegram.SendMessage("[ETC] | 🤤 | New valid share!")
 	if !ok {
 		return true, &ErrorReply{Code: -1, Message: "High rate of invalid shares"}
 	}
