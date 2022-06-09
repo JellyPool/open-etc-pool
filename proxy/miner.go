@@ -80,7 +80,7 @@ func (s *ProxyServer) processShare(login, id, ip string, t *BlockTemplate, param
 				log.Printf("Inserted block %v to backend", h.height)
 			}
 			log.Printf("Block found by miner %v@%v at height %d", login, ip, h.height)
-			go telegram.SendMessage("[ETC] | 🤯 | New block mined!")
+			go telegram.SendMessage("[ETC] | 🤯 | New block mined! Height: " + strconv.FormatUint(h.height, 10))
 		}
 	} else {
 		exist, err := s.backend.WriteShare(login, id, params, shareDiff, h.height, s.hashrateExpiration)
